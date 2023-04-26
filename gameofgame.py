@@ -26,7 +26,7 @@ def choose_country():
 def check_guess(guess, country):
     capital = countries_capitals[country]
     if guess.lower() == capital.lower():
-        return True
+       return True
     else:
        return False
 
@@ -41,7 +41,7 @@ while True:
     player1_guess = input(f"What is the capital of {country}? ")
     
     ##player2
-    print ("player 2 's turn")
+    print ("Player 2's turn")
     player2_guess = input(f"What is the capital of {country}? ")
 
     ##Reveal the correct answer
@@ -57,8 +57,10 @@ while True:
         print("well done, you know your Geography well!")
     elif check_guess(player2_guess, country):
         print("Player 2 guessed correctly!")
+        print("well done, you know your Geography well!")
     else:
         print("Neither player guessed correctly.")
+        print("You both should learn about capital cities in the world!")
         
         
     # Ask if the players want to continue playing
