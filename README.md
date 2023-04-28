@@ -1,2 +1,5 @@
-# Python_Programming_Learning
-This repository is for general learning purposes. Aim is to learn conventional way to write a python code.
+
+
+# country-capital-quiz-game
+This is a fun game in which the players take turns to guess capital cities of different countries in the world .
+ main
