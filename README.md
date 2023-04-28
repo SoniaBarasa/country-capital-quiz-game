@@ -1,2 +1,5 @@
-# Python_Programming_Learning
-This is a fun game that asks players to guess the capital cities of diffrerent countries in the world.
+
+
+# country-capital-quiz-game
+This is a fun game in which the players take turns to guess capital cities of different countries in the world .
+ main
