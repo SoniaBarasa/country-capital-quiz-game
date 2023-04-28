@@ -20,39 +20,52 @@ countries_capitals = {
 def choose_country():
     country = random.choice(list(countries_capitals.keys()))
     return country
+    
 
 # Function to check if the guess is correct
 def check_guess(guess, country):
     capital = countries_capitals[country]
     if guess.lower() == capital.lower():
-        return True
+    return True
     else:
-        return False
+    return False
 
 # Main game loop
-while True:
+    while True:
     # Choose a random country
     country = choose_country()
 
-    # Player 1's turn
+    # Both Players take turns to play
+    #player1 goes first
     print("Player 1's turn")
-    guess = input(f"What is the capital of {country}? ")
-    if check_guess(guess, country):
-        print("Correct!")
-    else:
-        print("Incorrect.")
+    player1_guess = input(f"What is the capital of {country}? ")
+    
+    ##player2
+    print ("Player 2's turn")
+    player2_guess = input(f"What is the capital of {country}? ")
 
-    # Player 2's turn
-    print("Player 2's turn")
-    guess = input(f"What is the capital of {country}? ")
-    if check_guess(guess, country):
-        print("Correct!")
-    else:
-        print("Incorrect.")
+    ##Reveal the correct answer
+    capital = countries_capitals[country]
+    print (f"The correct answer is {capital}.")
+    
 
+     ##check the guesses and print results
+    if check_guess(player1_guess, country) and check_guess(player2_guess, country):
+        print("Both players guessed correctly!")
+    elif check_guess(player1_guess, country):
+        print("Player 1 guessed correctly!")
+        print("Well done, you know your Geography well!")
+    elif check_guess(player2_guess, country):
+        print("Player 2 guessed correctly!")
+        print("Well done, you know your Geography well!")
+    else:
+        print("Neither player guessed correctly.")
+        print("You both should learn about capital cities in the world!")
+        
+        
     # Ask if the players want to continue playing
     play_again = input("Do you want to play again? (y/n) ")
     if play_again.lower() != "y":
         break
-
+    
 print("Thanks for playing!")
