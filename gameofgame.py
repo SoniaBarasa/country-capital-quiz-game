@@ -26,12 +26,12 @@ def choose_country():
 def check_guess(guess, country):
     capital = countries_capitals[country]
     if guess.lower() == capital.lower():
-       return True
+    return True
     else:
-       return False
+    return False
 
 # Main game loop
-while True:
+    while True:
     # Choose a random country
     country = choose_country()
 
@@ -54,10 +54,10 @@ while True:
         print("Both players guessed correctly!")
     elif check_guess(player1_guess, country):
         print("Player 1 guessed correctly!")
-        print("well done, you know your Geography well!")
+        print("Well done, you know your Geography well!")
     elif check_guess(player2_guess, country):
         print("Player 2 guessed correctly!")
-        print("well done, you know your Geography well!")
+        print("Well done, you know your Geography well!")
     else:
         print("Neither player guessed correctly.")
         print("You both should learn about capital cities in the world!")
