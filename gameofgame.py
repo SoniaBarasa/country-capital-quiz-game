@@ -25,10 +25,12 @@ def choose_country():
 # Function to check if the guess is correct
 def check_guess(guess, country):
     capital = countries_capitals[country]
+
     if guess.lower() == capital.lower():
     return True
     else:
     return False
+ main
 
 # Main game loop
     while True:
