@@ -31,9 +31,6 @@ def check_guess(guess, country):
     else:
         return False
 
-# Initialize player scores
-player1_score = 0
-player2_score = 0
 
 # Main game loop
 while True:
@@ -56,34 +53,25 @@ while True:
     # Check the guesses and update the scores
     if check_guess(player1_guess, country) and check_guess(player2_guess, country):
         print("Both players guessed correctly!")
-        player1_score += 1
-        player2_score += 1
+        
     elif check_guess(player1_guess, country):
         print("Player 1 guessed correctly!")
         print("Well done, you know your Geography well!")
-        player1_score += 1
+        #player1_score += 1
     elif check_guess(player2_guess, country):
         print("Player 2 guessed correctly!")
         print("Well done, you know your Geography well!")
-        player2_score += 1
+
     else:
         print("Neither player guessed correctly.")
         print("You both should learn about capital cities in the world!!")
         
-    # Print the current scores
-    print(f"Current scores: Player 1: {player1_score}, Player 2: {player2_score}")
     
     # Ask if the players want to continue playing
     play_again = input("Do you want to play again? (y/n) ")
     if play_again.lower() != "y":
         break
     
-# Print the final scores and congratulate the winner
-print(f"Final scores: Player 1: {player1_score}, Player 2: {player2_score}")
-if player1_score > player2_score:
-    print("Congratulations Player 1, you are the winner!")
-elif player2_score > player1_score:
-    print("Congratulations Player 2, you are the winner!")
 else:
     print("The game ended in a tie. Well played both players!")
     
