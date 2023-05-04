@@ -37,6 +37,9 @@ player2_score = 0
 #Defining the congratulatory message
 congrats_message ="Congratulations Player {winner}, you are the winner!"
 
+#defining string showing player's turn
+player_turn_str = "Player {player_num}'s turn"
+
 # Main game loop
 while True:
     # Choose a random country
@@ -44,11 +47,11 @@ while True:
 
     # Both Players take turns to play
     # player 1 goes first
-    print("Player 1's turn")
+    print(player_turn_str.format(player_num=1))
     player1_guess = input(f"What is the capital of {country}? ")
     
     # player 2 goes next
-    print("Player 2's turn")
+    print(player_turn_str.format(player_num=2))
     player2_guess = input(f"What is the capital of {country}? ")
 
     # Reveal the correct answer
