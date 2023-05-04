@@ -34,6 +34,9 @@ def check_guess(guess, country):
 player1_score = 0
 player2_score = 0
 
+#Defining the congratulatory message
+congrats_message ="Congratulations Player {winner}, you are the winner!"
+
 # Main game loop
 while True:
     # Choose a random country
@@ -76,13 +79,14 @@ while True:
     play_again = input("Do you want to play again? (y/n) ")
     if play_again.lower() != "y":
         break
-    
+else:
+    print("The game ended in a tie. Well played both players!")
 # Print the final scores and congratulate the winner
 print(f"Final scores: Player 1: {player1_score}, Player 2: {player2_score}")
 if player1_score > player2_score:
-    print("Congratulations Player 1, you are the winner!")
+    print(congrats_message.format(winner=1))
 elif player2_score > player1_score:
-    print("Congratulations Player 2, you are the winner!")
+    print(congrats_message.format(winner=2))
 else:
     print("The game ended in a tie. Well played both players!")
     
