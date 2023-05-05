@@ -57,7 +57,7 @@ while True:
     elif check_guess(player1_guess, country):
         print("Player 1 guessed correctly!")
         print("Well done, you know your Geography well!")
-        #player1_score += 1
+        
     elif check_guess(player2_guess, country):
         print("Player 2 guessed correctly!")
         print("Well done, you know your Geography well!")
