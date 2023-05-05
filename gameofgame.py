@@ -1,4 +1,20 @@
 import random
+##Define a list of countries to choose from
+# Define a list of countries
+countries = [
+    "Kenya",
+    "Uganda",
+    "France",
+    "Germany",
+    "Italy",
+    "Brazil",
+    "India",
+    "Japan",
+    "Russia",
+    "China",
+    "United Kingdom",
+    "USA"
+]
 
 # define a dictionary of countries and their capitals
 countries_capitals = {
@@ -16,24 +32,25 @@ countries_capitals = {
     "USA": "Washington D.C."
 }
 
-# Function to choose a random country from the dictionary
+
+##Define function to choose a random country from the list of coutres
 def choose_country():
-    country = random.choice(list(countries_capitals.keys()))
+    country =random.sample(countries,1)[0]
+    countries.remove(country)
     return country
-    
+
 
 # Function to check if the guess is correct
 def check_guess(guess, country):
     capital = countries_capitals[country]
-
     if guess.lower() == capital.lower():
-    return True
+        return True
     else:
-    return False
- main
+        return False
+ 
 
 # Main game loop
-    while True:
+while True:
     # Choose a random country
     country = choose_country()
 
