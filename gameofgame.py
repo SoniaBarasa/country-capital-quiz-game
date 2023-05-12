@@ -1,21 +1,19 @@
 import random
 import getpass
+import pycountry
+from countryinfo import CountryInfo
 
-# define a dictionary of countries and their capitals
-countries_capitals = {
-    "Kenya": "Nairobi",
-    "Uganda": "Kampala",
-    "France": "Paris",
-    "Germany": "Berlin",
-    "Italy": "Rome",
-    "Brazil": "Brasilia",
-    "India": "New Delhi",
-    "Japan": "Tokyo",
-    "Russia": "Moscow",
-    "China": "Beijing",
-    "United Kingdom":  "London",
-    "USA": "Washington D.C."
-}
+# Fetch all countries and their capitals using pycountry
+countries_capitals = {}
+for country in pycountry.countries:
+    try:
+        country_info = CountryInfo(country.alpha_2)
+        capital = country_info.capital()
+        if capital:
+            countries_capitals[country.name] = capital
+    except (KeyError, ValueError):
+        continue
+
 
 # Function to choose a random country from the dictionary
 def choose_country():
@@ -99,3 +97,4 @@ else:
     print("The game ended in a tie. Well played both players!")
     
 print("Thanks for playing!")
+   
