@@ -13,21 +13,7 @@ for country in pycountry.countries:
     except (KeyError, ValueError):
         continue
 
-# define a dictionary of countries and their capitals
-#countries_capitals = {
-    #"Kenya": "Nairobi",
-    #"Uganda": "Kampala",
-    #"France": "Paris",
-    #"Germany": "Berlin",
-    #"Italy": "Rome",
-    #"Brazil": "Brasilia",
-    #"India": "New Delhi",
-    #"Japan": "Tokyo",
-    #"Russia": "Moscow",
-    #"China": "Beijing",
-    #"United Kingdom": "London",
-    #"USA": "Washington D.C."
-#}
+
 
 # Function to choose a random country from the dictionary
 def choose_country():
@@ -107,3 +93,4 @@ else:
     print("The game ended in a tie. Well played both players!")
     
 print("Thanks for playing!")
+   
