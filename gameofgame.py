@@ -1,4 +1,5 @@
 import random
+import getpass
 
 # define a dictionary of countries and their capitals
 countries_capitals = {
@@ -12,7 +13,7 @@ countries_capitals = {
     "Japan": "Tokyo",
     "Russia": "Moscow",
     "China": "Beijing",
-    "United Kingdom": "London",
+    "United Kingdom":  "London",
     "USA": "Washington D.C."
 }
 
@@ -39,6 +40,8 @@ congrats_message ="Congratulations Player {winner}, you are the winner!"
 
 #defining string showing player's turn
 player_turn_str = "Player {player_num}'s turn"
+#return False
+
 
 # Main game loop
 while True:
@@ -46,16 +49,22 @@ while True:
     country = choose_country()
 
     # Both Players take turns to play
-    # player 1 goes first
-    print(player_turn_str.format(player_num=1))
+    #player1 goes first
+    print("Player 1's turn")
     player1_guess = input(f"What is the capital of {country}? ")
-    
+    player1_guess = getpass.getpass(prompt=f"What is the capital of {country}? ")
     # player 2 goes next
     print(player_turn_str.format(player_num=2))
     player2_guess = input(f"What is the capital of {country}? ")
+    # player 2 goes next
+    print("Player 2's turn")
+    player2_guess = getpass.getpass(prompt=f"What is the capital of {country}? ")
 
-    # Reveal the correct answer
+    ##Reveal the correct answer
     capital = countries_capitals[country]
+    print(f"The correct answer is {capital}.")
+
+    # Check the guesses and update the scores
     print(f"The correct answer is {capital}.")
 
     # Check the guesses and update the scores
@@ -63,17 +72,20 @@ while True:
         print("Both players guessed correctly!")
         player1_score += 1
         player2_score += 1
+        
     elif check_guess(player1_guess, country):
         print("Player 1 guessed correctly!")
         print("Well done, you know your Geography well!")
         player1_score += 1
+        
     elif check_guess(player2_guess, country):
         print("Player 2 guessed correctly!")
         print("Well done, you know your Geography well!")
+
         player2_score += 1
     else:
         print("Neither player guessed correctly.")
-        print("You both should learn about capital cities in the world!!")
+        print("You both should learn about capital cities in the world!!!")
         
     # Print the current scores
     print(f"Current scores: Player 1: {player1_score}, Player 2: {player2_score}")
@@ -82,14 +94,7 @@ while True:
     play_again = input("Do you want to play again? (y/n) ")
     if play_again.lower() != "y":
         break
-else:
-    print("The game ended in a tie. Well played both players!")
-# Print the final scores and congratulate the winner
-print(f"Final scores: Player 1: {player1_score}, Player 2: {player2_score}")
-if player1_score > player2_score:
-    print(congrats_message.format(winner=1))
-elif player2_score > player1_score:
-    print(congrats_message.format(winner=2))
+    
 else:
     print("The game ended in a tie. Well played both players!")
     
