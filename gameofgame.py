@@ -14,10 +14,7 @@ for country in pycountry.countries:
     except (KeyError, ValueError):
         continue
 
-# Function to choose a random country from the dictionary
-def choose_country():
-    country = random.choice(list(countries_capitals.keys()))
-    return country
+
 
 # Function to check if the guess is correct
 def check_guess(guess, country):
@@ -32,9 +29,16 @@ player1_score = 0
 player2_score = 0
 
 # Main game loop
+#function to list all available countries
+available_countries =list(countries_capitals.keys())
 while True:
+    if not available_countries:
+        print("All countries have been played!")
+        break
+
     # Choose a random country
-    country = choose_country()
+    country=random.sample(available_countries,1) [0]
+    available_countries.remove(country)
 
     # Both Players take turns to play
     print("Player 1's turn")
