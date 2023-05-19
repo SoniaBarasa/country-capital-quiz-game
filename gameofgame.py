@@ -42,9 +42,14 @@ player_turn_str = "Player {player_num}'s turn"
 
 
 # Main game loop
+##listing available countries
+available_countries =list(countries_capitals.keys())
 while True:
-    # Choose a random country
-    country = choose_country()
+    if not available_countries:
+        print("All countries have been played!")
+    # Choose a random country with replacement
+    country = random.sample(available_countries, 1) [0]
+    available_countries.remove(country)
 
     # Both Players take turns to play
     #player1 goes first
