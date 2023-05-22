@@ -63,7 +63,7 @@ while True:
     print(f"The correct answer is {capital}.")
 
     # Check the guesses and update the scores
-    #print(f"The correct answer is {capital}.")
+
 
     # Check the guesses and update the scores
     if check_guess(player1_guess, country) and check_guess(player2_guess, country):
