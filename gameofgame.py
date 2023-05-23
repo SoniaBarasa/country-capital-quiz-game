@@ -18,27 +18,33 @@ for country in pycountry.countries:
 # Function to choose a random country from the dictionary
 def choose_country():
     country = random.choice(list(countries_capitals.keys()))
-    return country
-    
+    return country   
 
 # Function to check if the guess is correct
+
+
 def check_guess(guess, country):
     capital = countries_capitals[country]
     if guess.lower() == capital.lower():
         return True
     else:
-        return False
+        return False   
+# defining main game logic
+
+
+def main ():
+ """Main game logic."""
 
 # Initialize player scores
 player1_score = 0
 player2_score = 0
 
-#Defining the congratulatory message
-congrats_message ="Congratulations Player {winner}, you are the winner!"
+# Defining the congratulatory message
+congrats_message = "Congratulations Player {winner}, you are the winner!"
 
-#defining string showing player's turn
+# defining string showing player's turn
 player_turn_str = "Player {player_num}'s turn"
-#return False
+# return False
 
 
 # Main game loop
@@ -47,7 +53,7 @@ while True:
     country = choose_country()
 
     # Both Players take turns to play
-    #player1 goes first
+    # player1 goes first
     print("Player 1's turn")
     player1_guess = input(f"What is the capital of {country}? ")
     player1_guess = getpass.getpass(prompt=f"What is the capital of {country}? ")
@@ -58,7 +64,7 @@ while True:
     print("Player 2's turn")
     player2_guess = getpass.getpass(prompt=f"What is the capital of {country}? ")
 
-    ##Reveal the correct answer
+    # Reveal the correct answer
     capital = countries_capitals[country]
     print(f"The correct answer is {capital}.")
 
@@ -84,17 +90,19 @@ while True:
     else:
         print("Neither player guessed correctly.")
         print("You both should learn about capital cities in the world!!!")
-        
     # Print the current scores
-    print(f"Current scores: Player 1: {player1_score}, Player 2: {player2_score}")
+    print(
+        f"Current scores: Player 1: {player1_score}, Player 2: {player2_score}"
+        )
     
     # Ask if the players want to continue playing
     play_again = input("Do you want to play again? (y/n) ")
     if play_again.lower() != "y":
         break
-    
-else:
-    print("The game ended in a tie. Well played both players!")
-    
-print("Thanks for playing!")
+    else:
+        print("The game ended in a tie. Well played both players!")
    
+print("Thanks for playing!")
+# call the main function
+if __name__ == "__main__":
+    main()
