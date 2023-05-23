@@ -48,12 +48,12 @@ while True:
 
     # Both Players take turns to play
     # player1 goes first
-    print("Player 1's turn")
+    print(player_turn_str.format(player_num=1))
     player1_guess = getpass.getpass(
         prompt=f"What is the capital of {country}? "
     )
 
-    # defining player turn format
+    # defining players turn format
     print(player_turn_str.format(player_num=2))
 
     # player 2 goes next
