@@ -53,7 +53,7 @@ while True:
         prompt=f"What is the capital of {country}? "
     )
 
-    # defining players turn format
+    # defining player 2 turn format
     print(player_turn_str.format(player_num=2))
 
     # player 2 goes next
