@@ -96,14 +96,15 @@ while True:
     
     # Ask if the players want to continue playing
     play_again = input("Do you want to play again? (y/n) ")
-    if play_again.lower() != "n":
-        break
+    if play_again.lower() != "y":
+       # break
+
     # Determine the winner and print the congratulatory message
-    if player1_score > player2_score:
-        winner_message = congrats_message.format(winner=1)
-    elif player2_score > player1_score:
-        winner_message = congrats_message.format(winner=2) 
+        if player1_score > player2_score:
+            print(congrats_message.format(winner=1))
+        elif player2_score > player1_score:
+            print(congrats_message.format(winner=2)) 
     else:
-        winner_message = "The game ended in a tie. Well played both players!"
-    print(winner_message)
+        print("The game ended in a tie. Well played both players!")
     print("Thanks for playing!")
+    break
