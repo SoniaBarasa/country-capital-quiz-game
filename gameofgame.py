@@ -32,27 +32,41 @@ def check_guess(guess, country):
 # defining main game logic
 
 
-def main ():
- """Main game logic."""
+def main():
+    """Main game logic."""
 
 # Initialize player scores
+
+
 player1_score = 0
 player2_score = 0
 
 # Defining the congratulatory message
 congrats_message = "Congratulations Player {winner}, you are the winner!"
+# Defining the congratulatory message
+congrats_message = "Congratulations Player {winner}, you are the winner!"
 
 # defining string showing player's turn
+# defining string showing player's turn
 player_turn_str = "Player {player_num}'s turn"
+# return False
 # return False
 
 
 # Main game loop
+# listing available countries
+available_countries = list(countries_capitals.keys())
 while True:
-    # Choose a random country
-    country = choose_country()
+    if not available_countries:
+        print("All countries have been played!")
+        break
+    # Choose a random country with replacement
+    country = random.sample(available_countries, 1)[0]
+    country = random.choice(available_countries)
+    available_countries.remove(country)
 
     # Both Players take turns to play
+    # player1 goes first
     # player1 goes first
     print("Player 1's turn")
     player1_guess = input(f"What is the capital of {country}? ")
@@ -65,10 +79,8 @@ while True:
     player2_guess = getpass.getpass(prompt=f"What is the capital of {country}? ")
 
     # Reveal the correct answer
+    # Reveal the correct answer
     capital = countries_capitals[country]
-    print(f"The correct answer is {capital}.")
-
-    # Check the guesses and update the scores
     print(f"The correct answer is {capital}.")
 
     # Check the guesses and update the scores
@@ -76,12 +88,10 @@ while True:
         print("Both players guessed correctly!")
         player1_score += 1
         player2_score += 1
-        
     elif check_guess(player1_guess, country):
         print("Player 1 guessed correctly!")
         print("Well done, you know your Geography well!")
-        player1_score += 1
-        
+        player1_score += 1 
     elif check_guess(player2_guess, country):
         print("Player 2 guessed correctly!")
         print("Well done, you know your Geography well!")
@@ -94,14 +104,17 @@ while True:
     print(
         f"Current scores: Player 1: {player1_score}, Player 2: {player2_score}"
         )
-    
+     
+    print(
+        f"Current scores: Player 1: {player1_score}, Player 2: {player2_score}"
+        )
     # Ask if the players want to continue playing
     play_again = input("Do you want to play again? (y/n) ")
     if play_again.lower() != "y":
         break
     else:
         print("The game ended in a tie. Well played both players!")
-   
+
 print("Thanks for playing!")
 # call the main function
 if __name__ == "__main__":
