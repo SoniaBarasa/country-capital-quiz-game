@@ -22,6 +22,8 @@ def choose_country():
 
 
 # Function to check if the guess is correct
+
+
 def check_guess(guess, country):
     capital = countries_capitals[country]
     if guess.lower() == capital.lower():
@@ -31,9 +33,13 @@ def check_guess(guess, country):
 
 
 # Initialize player scores
+
+
 player1_score = 0
 player2_score = 0
 
+# Defining the congratulatory message
+congrats_message = "Congratulations Player {winner}, you are the winner!"
 # Defining the congratulatory message
 congrats_message = "Congratulations Player {winner}, you are the winner!"
 
@@ -42,6 +48,8 @@ player_turn_str = "Player {player_num}'s turn"
 
 
 # Main game loop
+# listing available countries
+available_countries = list(countries_capitals.keys())
 while True:
     # Choose a random country
     country = choose_country()
