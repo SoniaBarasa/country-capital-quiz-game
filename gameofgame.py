@@ -40,8 +40,7 @@ player2_score = 0
 
 # Defining the congratulatory message
 congrats_message = "Congratulations Player {winner}, you are the winner!"
-# Defining the congratulatory message
-congrats_message = "Congratulations Player {winner}, you are the winner!"
+
 
 # defining string showing player's turn
 player_turn_str = "Player {player_num}'s turn"
@@ -103,8 +102,8 @@ while True:
     # Ask if the players want to continue playing
     play_again = input("Do you want to play again? (y/n) ")
     if play_again.lower() != "y":
-        break
+    
+    break
+        print("The game ended in a tie. Well played both players!")
 else:
-    print("The game ended in a tie. Well played both players!")
-
-print("Thanks for playing!")
+    print("Thanks for playing!")
