@@ -91,7 +91,6 @@ while True:
     # ask if the players want to continue playing
     play_again = input("Do you want to play again? (y/n) ")
     if play_again.lower() != "y":
-
         break
     # determine the winner and print congrats messgae
 if player1_score > player2_score:
