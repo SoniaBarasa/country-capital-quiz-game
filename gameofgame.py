@@ -57,14 +57,10 @@ while True:
 
     # Both Players take turns to play
     # player1 goes first
-    print("Player 1's turn")
-    player1_guess = input(f"What is the capital of {country}? ")
+    print(player_turn_str.format(player_num=1))
     player1_guess = getpass.getpass(prompt=f"What is the capital of {country}? ")
     # player 2 goes next
     print(player_turn_str.format(player_num=2))
-    player2_guess = input(f"What is the capital of {country}? ")
-    # player 2 goes next
-    print("Player 2's turn")
     player2_guess = getpass.getpass(prompt=f"What is the capital of {country}? ")
 
     # Reveal the correct answer
