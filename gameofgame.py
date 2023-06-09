@@ -67,19 +67,16 @@ while True:
 
     # Both Players take turns to play
     # player1 goes first
-    # player1 goes first
-    print("Player 1's turn")
-    player1_guess = input(f"What is the capital of {country}? ")
+  
+    print(player_turn_str.format(player_num=1))
+
     player1_guess = getpass.getpass(prompt=f"What is the capital of {country}? ")
     # player 2 goes next
     print(player_turn_str.format(player_num=2))
-    player2_guess = input(f"What is the capital of {country}? ")
-    # player 2 goes next
-    print("Player 2's turn")
     player2_guess = getpass.getpass(prompt=f"What is the capital of {country}? ")
 
     # Reveal the correct answer
-    # Reveal the correct answer
+
     capital = countries_capitals[country]
     print(f"The correct answer is {capital}.")
 
@@ -108,14 +105,21 @@ while True:
     print(
         f"Current scores: Player 1: {player1_score}, Player 2: {player2_score}"
         )
-    # Ask if the players want to continue playing
-    play_again = input("Do you want to play again? (y/n) ")
-    if play_again.lower() != "y":
-        break
-    else:
-        print("The game ended in a tie. Well played both players!")
-
-print("Thanks for playing!")
+    
 # call the main function
 if __name__ == "__main__":
     main()
+
+    # ask if the players want to continue playing
+    play_again = input("Do you want to play again? (y/n) ")
+    if play_again.lower() != "y":
+        break
+    # determine the winner and print congrats messgae
+if player1_score > player2_score:
+    print(congrats_message.format(winner=1))
+elif player2_score > player1_score:
+    print(congrats_message.format(winner=2))
+else:
+    print("The game ended in a tie. Well played both players!")
+print("Thanks for playing!")
+
