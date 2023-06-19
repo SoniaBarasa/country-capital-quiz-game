@@ -7,9 +7,6 @@ from countryinfo import CountryInfo
 # Function to choose a random country from the dictionary
 
 
-def choose_country():
-    country = random.choice(list(countries_capitals.keys()))
-    return country
 
 
 # Function to check if the guess is correct
@@ -25,15 +22,17 @@ def check_guess(guess, country):
 
 # Fetch all countries and their capitals using pycountry
 
-countries_capitals = {}
-for country in pycountry.countries:
-    try:
-        country_info = CountryInfo(country.alpha_2)
-        capital = country_info.capital()
-        if capital:
-            countries_capitals[country.name] = capital
-    except (KeyError, ValueError):
-        continue
+def get_countries_capitals():
+    countries_capitals = {}
+    for country in pycountry.countries:
+        try:
+            country_info = CountryInfo(country.alpha_2)
+            capital = country_info.capital()
+            if capital:
+                countries_capitals[country.name] = capital
+        except (KeyError, ValueError):
+            continue
+    return countries_capitals
 
 
 def main():
@@ -50,6 +49,7 @@ def main():
 
     # Main game loop
     # listing available countries
+    countries_capitals = get_countries_capitals()
     available_countries = list(countries_capitals.keys())
     while True:
         if not available_countries:
@@ -74,15 +74,15 @@ def main():
         print(f"The correct answer is {capital}.")
 
         # Check the guesses and update the scores
-        if check_guess(player1_guess, country) and check_guess(player2_guess, country):
+        if check_guess(player1_guess, country,  countries_capitals) and check_guess(player2_guess, country, countries_capitals):
             print("Both players guessed correctly!")
             player1_score += 1
             player2_score += 1
-        elif check_guess(player1_guess, country):
+        elif check_guess(player1_guess, country, countries_capitals):
             print("Player 1 guessed correctly!")
             print("Well done, you know your Geography well!")
             player1_score += 1
-        elif check_guess(player2_guess, country):
+        elif check_guess(player2_guess, country, countries_capitals):
             print("Player 2 guessed correctly!")
             print("Well done, you know your Geography well!")
 
