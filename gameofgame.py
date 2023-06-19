@@ -4,15 +4,10 @@ import pycountry
 from countryinfo import CountryInfo
 
 
-# Function to choose a random country from the dictionary
-
-
-
-
 # Function to check if the guess is correct
 
 
-def check_guess(guess, country):
+def check_guess(guess, country, countries_capitals):
     capital = countries_capitals[country]
     if guess.lower() == capital.lower():
         return True
@@ -21,6 +16,7 @@ def check_guess(guess, country):
 
 
 # Fetch all countries and their capitals using pycountry
+
 
 def get_countries_capitals():
     countries_capitals = {}
@@ -74,7 +70,9 @@ def main():
         print(f"The correct answer is {capital}.")
 
         # Check the guesses and update the scores
-        if check_guess(player1_guess, country,  countries_capitals) and check_guess(player2_guess, country, countries_capitals):
+        if check_guess(player1_guess, country, countries_capitals) and check_guess(
+            player2_guess, country, countries_capitals
+        ):
             print("Both players guessed correctly!")
             player1_score += 1
             player2_score += 1
