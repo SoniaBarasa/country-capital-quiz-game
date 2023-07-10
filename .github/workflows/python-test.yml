@@ -19,7 +19,6 @@ jobs:
        # run: pip install -r requirements.txt
 
       - name: Run pytest
-        run: |
-          pytest
+        run: pytest
           exit_status=$?
           echo "::set-output name=exit_status::$exit_status"
