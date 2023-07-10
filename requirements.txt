@@ -1,4 +1,4 @@
-getpass==40.0.14.1
+getpass
 random
 pycountry==22.3.5
 countryinfo==0.1.2
