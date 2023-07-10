@@ -2,7 +2,6 @@ import pytest
 import gameofgame
 
 
-# define test function
 def test_check_guess():
     # create test data
     guess = "Nairobi"
@@ -14,7 +13,6 @@ def test_check_guess():
     assert gameofgame.check_guess(guess, country, countries_capitals)
     assert not gameofgame.check_guess(wrong_guess, country, countries_capitals)
 
-    # define second test function
 
 
 def test_get_countries_capitals():
@@ -25,7 +23,6 @@ def test_get_countries_capitals():
 
     assert result["Kenya"] == "Nairobi"
 
-    # try  asserting that the test_data is a subset of the result
-
+    #assert that the test_data is a subset of the result
     for country, capital in test_data.items():
         assert result[country] == capital
