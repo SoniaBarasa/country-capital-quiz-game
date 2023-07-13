@@ -1,4 +1,2 @@
 [flake8]
-ignore =
-    # line length
-    E501
+nmax-line-length = 88
