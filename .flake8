@@ -1,2 +1,2 @@
 [flake8]
-nmax-line-length = 88
+max-line-length = 88
