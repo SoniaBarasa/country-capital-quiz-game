@@ -105,6 +105,33 @@ def main():
         else:
             print("The game ended in a tie. Well played both players!")
     print("Thanks for playing!")
+# Determine the final winner
+    print("\n===================================")
+    print("           FINAL SCORES")
+    print("===================================")
+    print(f"Player 1: {player1_score}")
+    print(f"Player 2: {player2_score}")
+    print("===================================")
+
+    if player1_score > player2_score:
+
+        print("Congratulations Player 1, you are the winner!")
+
+    elif player2_score > player1_score:
+
+        print("Congratulations Player 2, you are the winner!")
+
+    else:
+
+        print("The game ended in a tie. Well played both players!")
+
+    print("\nThanks for playing!")
+
+
+# Call the main function
+#if __name__ == "__main__":
+  #  main()
+#```
 
 
 # call the main function
