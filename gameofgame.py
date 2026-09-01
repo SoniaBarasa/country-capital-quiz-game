@@ -128,7 +128,7 @@ def main():
     print("\nThanks for playing!")
 
 
-# Call the main function
+#Call the main function
 #if __name__ == "__main__":
   #  main()
 #```
